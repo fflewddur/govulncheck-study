@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link href="/static/govulncheck.css" rel="stylesheet">
+  <title>govulncheck Results</title>
+</head>
+<body>
+
+  <h2>GO-2021-0076</h2>
+  <table>
+    <tr>
+      <td>Package</td>
+      <td>github.com/evanphx/json-patch</td>
+    </tr>
+    <tr>
+      <td>Your version</td>
+      <td>v0.0.0-20190203023257-5858425f7550</td>
+    </tr>
+    <tr>
+      <td>Fixed version</td>
+      <td>v0.5.2</td>
+    </tr>
+    <tr>
+      <td>Reference</td>
+      <td>https://pkg.go.dev/vuln/GO-2021-0076</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>A malicious JSON patch can cause a panic due to an out-of-bounds
+write attempt. This can be used as a denial of service vector if
+exposed to arbitrary user input.
+</td>
+    </tr>
+  </table>
+  
+    <details>
+      <summary>module4.main calls github.com/evanphx/json-patch.Patch.Apply</summary>
+      <ul>
+        
+          <li>module4.main</li>
+        
+          <li>github.com/evanphx/json-patch.Patch.Apply</li>
+        
+          <li>github.com/evanphx/json-patch.Patch.ApplyIndent</li>
+        
+          <li>github.com/evanphx/json-patch.Patch.add</li>
+        
+          <li>github.com/evanphx/json-patch.partialArray.add</li>
+        
+      </ul>
+    </details>
+  
+
+  <h2>GO-2020-0018</h2>
+  <table>
+    <tr>
+      <td>Package</td>
+      <td>github.com/satori/go.uuid</td>
+    </tr>
+    <tr>
+      <td>Your version</td>
+      <td>v1.2.0</td>
+    </tr>
+    <tr>
+      <td>Fixed version</td>
+      <td>v1.2.1-0.20181016170032-d91630c85102</td>
+    </tr>
+    <tr>
+      <td>Reference</td>
+      <td>https://pkg.go.dev/vuln/GO-2020-0018</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>UUIDs generated using NewV1 and NewV4 may not read the expected
+number of random bytes. These UUIDs may contain a significantly smaller
+amount of entropy than expected, possibly leading to collisions.
+</td>
+    </tr>
+  </table>
+  
+    <details>
+      <summary>module4.main calls github.com/satori/go.uuid.NewV1</summary>
+      <ul>
+        
+          <li>module4.main</li>
+        
+          <li>github.com/satori/go.uuid.NewV1</li>
+        
+      </ul>
+    </details>
+  
+    <details>
+      <summary>module4.init calls github.com/satori/go.uuid.init</summary>
+      <ul>
+        
+          <li>module4.init</li>
+        
+          <li>github.com/satori/go.uuid.init</li>
+        
+      </ul>
+    </details>
+  
+
+  <h2>GO-2020-0015</h2>
+  <table>
+    <tr>
+      <td>Package</td>
+      <td>golang.org/x/text/encoding/unicode</td>
+    </tr>
+    <tr>
+      <td>Your version</td>
+      <td>v0.3.1-0.20181227161524-e6919f6577db</td>
+    </tr>
+    <tr>
+      <td>Fixed version</td>
+      <td>v0.3.3</td>
+    </tr>
+    <tr>
+      <td>Reference</td>
+      <td>https://pkg.go.dev/vuln/GO-2020-0015</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>An attacker could provide a single byte to a UTF16 decoder instantiated with
+UseBOM or ExpectBOM to trigger an infinite loop if the String function on
+the Decoder is called, or the Decoder is passed to transform.String.
+If used to parse user supplied input, this may be used as a denial of service
+vector.
+</td>
+    </tr>
+  </table>
+  
+    <details>
+      <summary>module4.main calls golang.org/x/text/encoding/unicode.bomOverride.Transform</summary>
+      <ul>
+        
+          <li>module4.main</li>
+        
+          <li>golang.org/x/text/encoding/unicode.bomOverride.Transform</li>
+        
+          <li>golang.org/x/text/encoding.Decoder.Transform</li>
+        
+          <li>golang.org/x/text/encoding/unicode.utf16Decoder.Transform</li>
+        
+      </ul>
+    </details>
+  
+    <details>
+      <summary>module4.main calls golang.org/x/text/encoding/unicode.bomOverride.Transform</summary>
+      <ul>
+        
+          <li>module4.main</li>
+        
+          <li>golang.org/x/text/encoding/unicode.bomOverride.Transform</li>
+        
+      </ul>
+    </details>
+  
+
+</body>
+</html>
