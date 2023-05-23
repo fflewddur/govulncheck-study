@@ -23,5 +23,8 @@ func main() {
 		}
 	}
 	json := `{"hello": "world"}`
-	fmt.Println(gjson.Valid(json))
+	if gjson.Valid(json) {
+		r := gjson.Get(json, "hello")
+		fmt.Printf("hello: %v\n", r)
+	}
 }

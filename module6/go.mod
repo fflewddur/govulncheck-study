@@ -1,4 +1,4 @@
-module module5
+module module6
 
 go 1.18
 
